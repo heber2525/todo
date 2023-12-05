@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Estudiantes</h2>
+    <ul>
+      <% if (aulas.length > 0 && estudiantes.length > 0) { %> <% for (let i = 0; i < estudiantes.length; i++) { %>
+      <li><%- estudiantes[i].nombre %></li>
+      <% } %> <% } else { %>
+      <li>no hay estudiantes registrados</li>
+      <% } %>
+    </ul>
+
+    <% if(aulas.length > 0 ){%>
+    <form action="/crear-estudiante" method="POST">
+      <input type="text" name="nombre" placeholder="nombre estudiante" />
+      <select name="aula">
+        <option value="0" selected disabled>seleccione un aula</option>
+        <% for(let i = 0; i< aulas.length; i++){ %>
+        <option value="<%- aulas[i].id %>"><%- aulas[i].nombre %></option>
+        <%}%>
+      </select>
+      <input type="submit" value="añadir estudiante" />
+    </form>
+
+    <% } %>
+    <p>volver al <a href="/">inicio</a></p>
+  </body>
+</html>

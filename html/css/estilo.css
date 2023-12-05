@@ -1,0 +1,13 @@
+form {
+  padding: 10px;
+}
+.contenedor-rectangulos {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.rectangulo {
+  border: 1px solid black;
+  margin: 10px;
+}
